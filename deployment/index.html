@@ -1,0 +1,1176 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://raythurman2386.github.io/fastapi-react-starter/deployment/">
+      
+      
+        <link rel="prev" href="../make_it_yours/">
+      
+      
+        <link rel="next" href="../roadmap/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Deployment - FastAPI React Starter Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deployment-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FastAPI React Starter Docs" class="md-header__button md-logo" aria-label="FastAPI React Starter Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FastAPI React Starter Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../initial_setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Initial Setup
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../development/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Development
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../frontend/tailwind-v4/" class="md-tabs__link">
+          
+  
+  
+  Frontend Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../backend/fastapi-guide/" class="md-tabs__link">
+          
+  
+  
+  Backend Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../make_it_yours/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Make it Yours
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Deployment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FastAPI React Starter Docs" class="md-nav__button md-logo" aria-label="FastAPI React Starter Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FastAPI React Starter Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initial_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Initial Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/tailwind-v4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tailwind CSS v4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/shadcn-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shadcn UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Backend Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Backend Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/fastapi-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FastAPI Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/alembic-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alembic Migrations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make_it_yours/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Make it Yours
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deployment-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Deployment Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-production-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Production Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Production Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-root-env-file-for-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Root .env File (for Docker Compose)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-docker-compose-adjustments-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Docker Compose Adjustments for Production
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-building-and-running-in-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Building and Running in Production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-data-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Data Persistence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-reverse-proxy-and-https-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Reverse Proxy and HTTPS (Recommended)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-deploying-documentation-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Deploying Documentation (MkDocs)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monitoring-and-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Monitoring and Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cloud-provider-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Cloud Provider Deployments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Cloud Provider Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-google-cloud-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Google Cloud Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-aws-elastic-container-service-ecs-with-fargate" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. AWS Elastic Container Service (ECS) with Fargate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="deployment-guide">Deployment Guide<a class="headerlink" href="#deployment-guide" title="Permanent link">&para;</a></h1>
+<p>This guide provides instructions for deploying the FastAPI React Starter application to a production environment. The primary method described uses Docker and Docker Compose.</p>
+<h2 id="1-deployment-overview">1. Deployment Overview<a class="headerlink" href="#1-deployment-overview" title="Permanent link">&para;</a></h2>
+<p>The recommended way to deploy this application is using Docker Compose. This method packages the backend, frontend, and database into manageable services.</p>
+<p>For a robust production setup, you'll typically place a reverse proxy (like Nginx or Traefik) in front of the application to handle HTTPS, load balancing, and potentially serve static frontend assets more efficiently.</p>
+<h2 id="2-prerequisites">2. Prerequisites<a class="headerlink" href="#2-prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Server:</strong> A server (VPS, dedicated server, or cloud instance) running a Linux distribution.</li>
+<li><strong>Docker &amp; Docker Compose:</strong> Ensure Docker and Docker Compose (v2 plugin) are installed on your server. Follow the official installation guides.</li>
+<li><strong>Domain Name:</strong> A registered domain name pointing to your server's IP address.</li>
+<li><strong>SSL Certificates:</strong> SSL certificates for your domain to enable HTTPS (e.g., from Let's Encrypt).</li>
+<li><strong>Firewall:</strong> Configure your server's firewall to allow traffic on necessary ports (e.g., 80 for HTTP, 443 for HTTPS).</li>
+</ul>
+<h2 id="3-production-configuration">3. Production Configuration<a class="headerlink" href="#3-production-configuration" title="Permanent link">&para;</a></h2>
+<p>Before deploying, you <strong>must</strong> configure environment variables for production. It's highly recommended to use a separate <code>.env</code> file for production or manage these variables securely through your deployment environment.</p>
+<h3 id="31-root-env-file-for-docker-compose">3.1. Root <code>.env</code> File (for Docker Compose)<a class="headerlink" href="#31-root-env-file-for-docker-compose" title="Permanent link">&para;</a></h3>
+<p>Create or update the <code>.env</code> file in your project root on the server:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Database Configuration (ensure these are strong, unique credentials)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>DB_USER=your_prod_db_user
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>DB_PASSWORD=your_prod_db_password
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>DB_NAME=your_prod_db_name
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a># Backend Production Settings (passed to backend service in docker-compose.yml)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>ENVIRONMENT=production
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>JWT_SECRET_KEY=generate_a_very_strong_random_secret_key # IMPORTANT! Change this!
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>PROD_CORS_ORIGINS=[&quot;https://yourdomain.com&quot;,&quot;https://www.yourdomain.com&quot;] # Your frontend domain(s)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a># Frontend Production Settings (passed to frontend service in docker-compose.yml)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>PROD_VITE_API_URL=https://yourdomain.com/api # URL of your backend API
+</code></pre></div>
+<p><strong>Key Production Variables:</strong></p>
+<ul>
+<li><code>DB_USER</code>, <code>DB_PASSWORD</code>, <code>DB_NAME</code>: Use strong, unique credentials for your production database.</li>
+<li><code>ENVIRONMENT=production</code>: Sets the application to run in production mode (affects logging, error handling, etc., as defined in <code>backend/app/config/config.py</code>).</li>
+<li><code>JWT_SECRET_KEY</code>: <strong>CRITICAL!</strong> This key is used to sign JWTs. It <strong>must</strong> be a long, random, and secret string. Do not use the development default. You can generate one using <code>openssl rand -hex 32</code>.</li>
+<li><code>PROD_CORS_ORIGINS</code>: A JSON-formatted string array of allowed origins for CORS. Replace <code>https://yourdomain.com</code> with your actual frontend domain(s).</li>
+<li><code>PROD_VITE_API_URL</code>: The public URL where your backend API will be accessible (e.g., if served under <code>/api</code> via a reverse proxy).</li>
+</ul>
+<h3 id="32-docker-compose-adjustments-for-production">3.2. Docker Compose Adjustments for Production<a class="headerlink" href="#32-docker-compose-adjustments-for-production" title="Permanent link">&para;</a></h3>
+<p>It's best practice to have a production-specific Docker Compose file (e.g., <code>docker-compose.prod.yml</code>) or to modify the existing <code>docker-compose.yml</code> for production needs. Here are key changes to consider:</p>
+<ul>
+<li><strong>Remove Development Volumes:</strong> For the <code>backend</code> and <code>frontend</code> services, remove the host-mounted volumes that map your local code into the container (e.g., <code>volumes: - ./backend:/app</code>). In production, the code should be copied into the image during the build process.</li>
+<li><strong>Production Commands:</strong><ul>
+<li><strong>Backend:</strong> Change the <code>command</code> to use a production-grade ASGI server like Gunicorn with Uvicorn workers. Example:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># In docker-compose.yml for backend service</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gunicorn -k uvicorn.workers.UvicornWorker -w 4 app.main:app --bind 0.0.0.0:8000</span>
+</code></pre></div>
+    Adjust the number of workers (<code>-w 4</code>) based on your server's CPU cores.</li>
+<li><strong>Frontend:</strong> The <code>command</code> should serve the built static assets or run a production Node.js server if applicable. If your <code>frontend/Dockerfile</code> builds static assets (e.g., into <code>/app/dist</code>), you might use a multi-stage Dockerfile with a lightweight web server like Nginx to serve these files. Alternatively, if <code>npm run build</code> creates a <code>dist</code> folder, and your <code>Dockerfile</code> copies it and <code>npm start</code> (or a similar command in <code>package.json</code>) serves it with a production-ready static server, that can also work.
+    <em>If serving frontend static files via Nginx (either in the frontend container or a separate reverse proxy container), the frontend service in <code>docker-compose.yml</code> might not need to expose a port directly or could be simplified.</em></li>
+</ul>
+</li>
+<li><strong>Environment Variables:</strong> Update the <code>environment</code> section in <code>docker-compose.yml</code> for <code>backend</code> and <code>frontend</code> services to use the production values defined in your root <code>.env</code> file:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># backend service</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_NAME=${DB_NAME}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_USER=${DB_USER}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD=${DB_PASSWORD}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_HOST=postgres</span><span class="w"> </span><span class="c1"># Stays as the service name</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PORT=5432</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CORS_ORIGINS=${PROD_CORS_ORIGINS}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENVIRONMENT=${ENVIRONMENT:-production}</span><span class="w"> </span><span class="c1"># Default to production</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JWT_SECRET_KEY=${JWT_SECRET_KEY}</span><span class="w">      </span><span class="c1"># Passed from root .env</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># frontend service</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VITE_API_URL=${PROD_VITE_API_URL}</span><span class="w"> </span><span class="c1"># Passed from root .env</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="c1"># Add any other necessary production env vars for frontend build/runtime</span>
+</code></pre></div></li>
+<li><strong>Ports:</strong> Only expose ports that need to be accessed externally (typically via a reverse proxy, e.g., port 80 or 443). Internal service-to-service communication uses Docker's internal network.</li>
+</ul>
+<p><strong>Example <code>docker-compose.prod.yml</code> (Illustrative - combine with your base <code>docker-compose.yml</code>):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># docker-compose.prod.yml</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="c1"># Remove development volume mount if present in base file</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="c1"># volumes: [] # Clears volumes from base file if using extends</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gunicorn -k uvicorn.workers.UvicornWorker -w 4 app.main:app --bind 0.0.0.0:8000</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENVIRONMENT=production</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CORS_ORIGINS=${PROD_CORS_ORIGINS}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JWT_SECRET_KEY=${JWT_SECRET_KEY}</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="c1"># Potentially remove port mapping if accessed via reverse proxy</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="c1"># ports:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="c1">#   - &quot;8000:8000&quot;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="nt">frontend</span><span class="p">:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="c1"># Remove development volume mount</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="c1"># volumes: []</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="c1"># command: npm run start # Or command to serve built static files</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VITE_API_URL=${PROD_VITE_API_URL}</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="c1"># Potentially remove port mapping</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="c1"># ports:</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="c1">#  - &quot;5173:5173&quot;</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1"># Ensure postgres_data volume is still defined as in the base docker-compose.yml</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="c1"># volumes:</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="c1">#   postgres_data:</span>
+</code></pre></div>
+<p>To use multiple compose files: <code>docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d</code></p>
+<h2 id="4-building-and-running-in-production">4. Building and Running in Production<a class="headerlink" href="#4-building-and-running-in-production" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Transfer Project:</strong> Copy your project files (including your production-ready Dockerfiles and Docker Compose files) to your server.</li>
+<li><strong>Create <code>.env</code> file:</strong> Create the root <code>.env</code> file on your server with production values as described above.</li>
+<li><strong>Pull latest images (optional but good practice):</strong>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>pull<span class="w"> </span><span class="c1"># Pulls base images like postgres:17-alpine</span>
+</code></pre></div></li>
+<li>
+<p><strong>Build and Start Services:</strong>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># If using a single, modified docker-compose.yml</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># If using docker-compose.prod.yml to override/extend</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.yml<span class="w"> </span>-f<span class="w"> </span>docker-compose.prod.yml<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d
+</code></pre></div>
+    The <code>--build</code> flag ensures images are rebuilt. The <code>-d</code> flag runs services in detached mode.</p>
+</li>
+<li>
+<p><strong>Database Migrations:</strong> The backend service is configured with <code>command: bash -c "python manage.py run"</code> which internally calls <code>migrate</code> before starting the app. If you change this command for production (e.g., to Gunicorn directly), ensure migrations are run as a separate step or as part of your container's entrypoint script before the main application starts.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Example of running migrations manually if needed</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>backend<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="5-data-persistence">5. Data Persistence<a class="headerlink" href="#5-data-persistence" title="Permanent link">&para;</a></h2>
+<p>The <code>docker-compose.yml</code> defines a named volume <code>postgres_data</code> for the PostgreSQL database. This ensures that your database data persists even if the <code>postgres</code> container is stopped or removed. Ensure this volume is properly managed and backed up as part of your server maintenance routine.</p>
+<h2 id="6-reverse-proxy-and-https-recommended">6. Reverse Proxy and HTTPS (Recommended)<a class="headerlink" href="#6-reverse-proxy-and-https-recommended" title="Permanent link">&para;</a></h2>
+<p>For production, it's highly recommended to use a reverse proxy like <strong>Nginx</strong> or <strong>Traefik</strong>.</p>
+<p><strong>Benefits:</strong>
+*   <strong>HTTPS/SSL Termination:</strong> Handle SSL certificates and encrypt traffic.
+*   <strong>Load Balancing:</strong> (If you scale to multiple instances of your backend).
+*   <strong>Serving Static Files:</strong> Nginx is very efficient at serving static frontend assets.
+*   <strong>Custom Domain Names:</strong> Easily map your domain to the application.
+*   <strong>Security:</strong> Can add security headers, rate limiting, etc.</p>
+<p><strong>General Setup with Nginx (Conceptual):</strong>
+1.  Install Nginx on your server.
+2.  Configure Nginx as a reverse proxy to forward requests to your Dockerized services:
+    *   Requests to <code>yourdomain.com/api/*</code> could go to the <code>backend</code> service (e.g., <code>http://localhost:8000</code>).
+    *   Requests to <code>yourdomain.com/*</code> could serve the static frontend assets (if built and served by Nginx) or go to the <code>frontend</code> service (e.g., <code>http://localhost:5173</code>).
+3.  Set up SSL certificates (e.g., using Certbot with Let's Encrypt) for your domain in Nginx.</p>
+<p><em>Refer to Nginx or Traefik documentation for detailed configuration instructions.</em></p>
+<h2 id="7-deploying-documentation-mkdocs">7. Deploying Documentation (MkDocs)<a class="headerlink" href="#7-deploying-documentation-mkdocs" title="Permanent link">&para;</a></h2>
+<p>The <code>docs</code> service in <code>docker-compose.yml</code> serves the documentation.</p>
+<ol>
+<li>Ensure the <code>docs</code> service is included when you run <code>docker compose up</code>.</li>
+<li>If you have a reverse proxy, configure it to route traffic from a subdomain (e.g., <code>docs.yourdomain.com</code>) or a path (e.g., <code>yourdomain.com/project-docs/</code>) to the <code>docs</code> service (e.g., <code>http://localhost:8001</code>).</li>
+</ol>
+<p>Alternatively, you can build the MkDocs site into static HTML files and deploy them to any static hosting provider (e.g., GitHub Pages, Netlify, AWS S3):</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># From your local machine, in the project root</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>docs<span class="w"> </span>mkdocs<span class="w"> </span>build
+</code></pre></div>
+This will generate the static site in the <code>docs/site/</code> directory (or as configured in <code>mkdocs.yml</code>). You can then upload this <code>site</code> directory.</p>
+<h2 id="8-monitoring-and-logging">8. Monitoring and Logging<a class="headerlink" href="#8-monitoring-and-logging" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Application Logs:</strong> Use <code>docker compose logs backend</code> and <code>docker compose logs frontend</code> to view application logs.</li>
+<li><strong>Server Monitoring:</strong> Implement server-level monitoring for CPU, memory, disk space, and network traffic.</li>
+<li><strong>Log Aggregation:</strong> For more robust logging, consider setting up a centralized logging solution (e.g., ELK stack, Grafana Loki, or a cloud provider's logging service).</li>
+</ul>
+<hr />
+<h2 id="9-cloud-provider-deployments">9. Cloud Provider Deployments<a class="headerlink" href="#9-cloud-provider-deployments" title="Permanent link">&para;</a></h2>
+<p>While Docker Compose is excellent for single-server deployments, you might want to leverage managed cloud platforms like Google Cloud Run or AWS ECS for better scalability, reliability, and easier management.</p>
+<p>The <code>deployments/</code> directory in this project contains ready-to-use configuration files for these platforms.</p>
+<h3 id="91-google-cloud-run">9.1. Google Cloud Run<a class="headerlink" href="#91-google-cloud-run" title="Permanent link">&para;</a></h3>
+<p>Google Cloud Run is a serverless platform that automatically scales your containerized applications.</p>
+<ul>
+<li><strong>Configuration File:</strong> <code>deployments/google-cloud/cloudbuild.yaml</code></li>
+<li><strong>Method:</strong> This file is used with Google Cloud Build to automatically build your backend and frontend Docker images, push them to Google Container Registry (GCR), and deploy them as two separate services on Cloud Run.</li>
+</ul>
+<p><strong>To Deploy:</strong>
+1.  <strong>Prerequisites:</strong>
+    *   A Google Cloud Project with billing enabled.
+    *   The <code>gcloud</code> CLI installed and configured.
+    *   Cloud Build, Cloud Run, and Container Registry APIs enabled.
+2.  <strong>Configure Substitutions:</strong> The <code>cloudbuild.yaml</code> uses substitution variables (e.g., <code>_REGION</code>, <code>_BACKEND_SERVICE_NAME</code>). You can set these directly in a Cloud Build trigger or when running the build manually.
+3.  <strong>Set up a Trigger:</strong> In the Google Cloud Console, navigate to Cloud Build and create a trigger that points to your source code repository. Configure it to use the <code>deployments/google-cloud/cloudbuild.yaml</code> file.
+4.  <strong>Push to Deploy:</strong> Pushing a commit to your configured branch will automatically trigger the build and deployment process.</p>
+<p><em>For detailed steps, refer to the <a href="https://cloud.google.com/run/docs">Google Cloud Run documentation</a>.</em></p>
+<h3 id="92-aws-elastic-container-service-ecs-with-fargate">9.2. AWS Elastic Container Service (ECS) with Fargate<a class="headerlink" href="#92-aws-elastic-container-service-ecs-with-fargate" title="Permanent link">&para;</a></h3>
+<p>AWS ECS is a highly scalable container orchestration service. Fargate is a serverless compute engine for ECS, so you don't have to manage servers.</p>
+<ul>
+<li><strong>Configuration Files:</strong><ul>
+<li><code>deployments/aws/buildspec.yml</code>: For AWS CodeBuild to build and push images to ECR.</li>
+<li><code>deployments/aws/task-definitions/</code>: Contains JSON templates for the backend and frontend ECS task definitions.</li>
+</ul>
+</li>
+<li><strong>Method:</strong><ol>
+<li><strong>AWS CodePipeline:</strong> Create a pipeline that uses your source repository (e.g., GitHub, AWS CodeCommit).</li>
+<li><strong>Build Stage:</strong> Add a build stage that uses AWS CodeBuild with the <code>buildspec.yml</code> file. This will build your Docker images and push them to Amazon ECR.</li>
+<li><strong>Deploy Stage:</strong> Add a deploy stage that uses the "Amazon ECS" action to deploy your services using the task definitions.</li>
+</ol>
+</li>
+</ul>
+<p><strong>To Deploy:</strong>
+1.  <strong>Prerequisites:</strong>
+    *   An AWS account.
+    *   The <code>aws</code> CLI installed and configured.
+    *   ECR repositories for your backend and frontend images.
+    *   An ECS cluster.
+2.  <strong>Customize Task Definitions:</strong> Update the placeholder values (e.g., <code>&lt;YOUR_BACKEND_ECR_REPO_URI&gt;</code>, <code>&lt;YOUR_AWS_ACCOUNT_ID&gt;</code>) in the <code>*.json</code> task definition files.
+3.  <strong>Set up CodePipeline:</strong> Follow the AWS documentation to create a pipeline that automates the build and deploy process from your repository to your ECS cluster.</p>
+<p><em>For detailed steps, refer to the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html">AWS ECS User Guide</a>.</em></p>
+<p>Deploying a web application involves many considerations. This guide provides a starting point for self hosting and two of the top cloud providers. Always adapt the configuration to your specific security and performance requirements. You have a way to go before you can deploy your project from this template, once you have reached a point where you can deploy your project reach out to the maintainer for assistance.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
